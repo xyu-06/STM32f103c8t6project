@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "STM32F103C8T6",
+            "compilerPath": "D:/keil/ARM/ARMCC/bin/armcc.exe",
+            "intelliSenseMode": "windows-gcc-arm",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "includePath": [
+                "${workspaceFolder}/User",
+                "${workspaceFolder}/HardWare",
+                "${workspaceFolder}/System",
+                "${workspaceFolder}/Library",
+                "${workspaceFolder}/Start",
+                "D:/keil/ARM/ARMCC/include"
+            ],
+            "defines": [
+                "USE_STDPERIPH_DRIVER",
+                "STM32F10X_MD",
+                "HSE_VALUE=8000000",
+                "__CC_ARM"
+            ]
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Keil：编译当前工程",
+            "type": "shell",
+            "command": "D:/keil/UV4/UV4.exe",
+            "args": [
+                "-b",
+                "${workspaceFolder}/project.uvprojx",
+                "-j0"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            }
+        }
+    ]
+}

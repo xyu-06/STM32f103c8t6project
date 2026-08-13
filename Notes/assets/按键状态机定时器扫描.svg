@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="760" height="300" fill="#0d1117"/>
+  <text x="20" y="30" fill="#e6edf3" font-size="16" font-weight="bold">按键状态机：定时器扫描 + 连续采样（每 5ms 扫描一次）</text>
+
+  <!-- 状态 0 -->
+  <rect x="40" y="80" width="140" height="50" rx="8" fill="#1f6feb" stroke="#58a6ff"/>
+  <text x="110" y="100" fill="#fff" font-size="13" text-anchor="middle" font-weight="bold">状态0</text>
+  <text x="110" y="118" fill="#c9d1d9" font-size="11" text-anchor="middle">松开·等待按下</text>
+
+  <!-- 状态 1 -->
+  <rect x="310" y="80" width="140" height="50" rx="8" fill="#9e6a03" stroke="#d29922"/>
+  <text x="380" y="100" fill="#fff" font-size="13" text-anchor="middle" font-weight="bold">状态1</text>
+  <text x="380" y="118" fill="#c9d1d9" font-size="11" text-anchor="middle">消抖·连续采样</text>
+
+  <!-- 状态 2 -->
+  <rect x="580" y="80" width="150" height="50" rx="8" fill="#1a7f37" stroke="#3fb950"/>
+  <text x="655" y="100" fill="#fff" font-size="13" text-anchor="middle" font-weight="bold">状态2</text>
+  <text x="655" y="118" fill="#c9d1d9" font-size="11" text-anchor="middle">按住·区分长短按</text>
+
+  <!-- 箭头 0->1 -->
+  <line x1="180" y1="105" x2="305" y2="105" stroke="#58a6ff" stroke-width="2"/>
+  <polygon points="310,105 298,100 298,110" fill="#58a6ff"/>
+  <text x="243" y="95" fill="#8b949e" font-size="11" text-anchor="middle">读到低电平</text>
+
+  <!-- 箭头 1->2 -->
+  <line x1="450" y1="105" x2="575" y2="105" stroke="#3fb950" stroke-width="2"/>
+  <polygon points="580,105 568,100 568,110" fill="#3fb950"/>
+  <text x="513" y="95" fill="#8b949e" font-size="11" text-anchor="middle">连续3次低</text>
+
+  <!-- 回箭头 1->0 -->
+  <path d="M 380 130 L 380 180 L 110 180 L 110 135" fill="none" stroke="#f85149" stroke-width="2"/>
+  <polygon points="110,130 105,142 115,142" fill="#f85149"/>
+  <text x="245" y="195" fill="#f85149" font-size="11" text-anchor="middle">读到高电平（抖动/松开）→ 回状态0</text>
+
+  <!-- 2->0 松开 -->
+  <path d="M 655 130 L 655 230 L 380 230 L 380 180" fill="none" stroke="#8b949e" stroke-width="2" stroke-dasharray="5,4"/>
+  <polygon points="380,175 374,187 386,187" fill="#8b949e"/>
+  <text x="540" y="245" fill="#8b949e" font-size="11" text-anchor="middle">松开 → 未长按过则触发短按，回状态0</text>
+
+  <!-- 状态2 内长按 -->
+  <rect x="590" y="200" width="140" height="36" rx="6" fill="#161b22" stroke="#3fb950"/>
+  <text x="660" y="222" fill="#7ee787" font-size="11" text-anchor="middle">按住 ≥1s → 触发长按一次</text>
+
+  <text x="20" y="285" fill="#8b949e" font-size="12">连续3次采样 = 3×5ms = 15ms 消抖；长按阈值 200次 × 5ms = 1000ms</text>
+</svg>
