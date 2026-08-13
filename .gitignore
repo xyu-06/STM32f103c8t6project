@@ -1,0 +1,32 @@
+# ===== Keil 编译产物 =====
+Objects/
+Listings/
+DebugConfig/
+*.uvguix.*
+*.uvoptx
+*.depend
+*.bak
+
+# ===== 编译中间文件 =====
+*.o
+*.crf
+*.axf
+*.lnp
+*.sct
+*.map
+*.lst
+*.htm
+*.dep
+
+# ===== 日志/临时文件 =====
+*.log
+build*.log
+verify_build.log
+
+# ===== VS Code（保留 .vscode 配置，忽略工作区文件）=====
+*.code-workspace
+
+# ===== 系统文件 =====
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "STM32 调试（可选 Cortex-Debug）",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/Objects/project.axf",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "stlink",
+            "device": "STM32F103C8",
+            "interface": "swd",
+            "runToEntryPoint": "main"
+        }
+    ]
+}
